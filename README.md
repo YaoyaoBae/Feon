@@ -1,4 +1,4 @@
-*## Feon
+## Feon
 Feon is a python-based finite element analysis framework for education and research purpose at the sponsor of Hubei Univeristy of Technology!
 ## Version
 Current:1.0.0
@@ -16,6 +16,24 @@ python install setup.py
 ## Packages
 * sa---For structrual analysis
 * ffa --- For fluid flow analysis
+* derivation --- matrix derivation 
+
+## elements suported
+
+* Spring1D11 
+* Spring2D11
+* Spring3D11
+
+* Link1D11
+* Link2D11
+* Link3D11
+
+* Beam1D11
+* Beam2D11
+* Beam3D11
+
+* Tri2d11S---- Triange elements for plane stress problem
+* Tri2D11 ---- Triange elements for plane strain problem
 
 
 
