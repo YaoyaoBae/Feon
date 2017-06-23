@@ -5,10 +5,13 @@ Current:1.0.0
 ## Requirements
 Numpy is a must. Matplotlib is needed for visualization. Mpmath is need for Matrix derivation.
 ## Installation
+```
 Use pip
 $pip install feon
+```
 Or
 python install setup.py
+```
 
 
 
