@@ -135,7 +135,7 @@ if __name__ == "__main__":
 ```
 **Frame with hinged node problem**
 ![image](https://github.com/YaoyaoBae/Feon/blob/master/examples/problems/frame%20with%20hinged%20node/creenshot.png)
-```
+
 **Embedded wall problem**
 ![image](https://github.com/YaoyaoBae/Feon/blob/master/examples/problems/embedded%20wall/screenshot.png)
 ```python
