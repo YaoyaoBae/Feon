@@ -124,14 +124,14 @@ if __name__ == "__main__":
     ax2.set_xlim([-1,46])
     ax2.set_ylabel(r"$N/kN$")
     ax2.set_ylim(-40000,40000)
-    ax2.xaxis.set_minor_locator(MultipleLocator(1))
+     ax2.xaxis.set_minor_locator(MultipleLocator(1))
     for i in xrange(len(eforce)):
         ax2.plot([i-0.5,i+0.5],[eforce[i],eforce[i]],"ks-",ms = 3)
     plt.show()
     draw_bar_info(els[5])
 
 ```
-**Embedded wall
+**Embedded wall problem**
 ![image](https://github.com/YaoyaoBae/Feon/blob/master/examples/problems/embedded%20wall/screenshot.png)
 ```python
 # -*- coding: utf-8 -*-
@@ -146,6 +146,7 @@ from feon.tools import pair_wise
 import matplotlib.pyplot as plt
 from feon.sa.draw2d import *
 if __name__ == "__main__":
+    #material
     E1 = 2.85e6
     E2 = 200e6
     k = 15000
@@ -154,32 +155,42 @@ if __name__ == "__main__":
     A1 = 0.003
     ka = 0.6
 
+    #create nodes
     nds1 =[Node(0,-i) for i in xrange(10)]
     nds2 = [Node(0,-(i+20)*0.5) for i in xrange(11)]
     nds3 = [Node(-0.5,-(i+20)*0.5) for i in xrange(11)]
     nds4 = [Node(-1.5,-2),Node(-1.5,-6)]
 
+    #create beam
     els=[]
     for nd in pair_wise(nds1+nds2):
         els.append(Beam2D11(nd,E1,A,I))
 
+    
+    #create soil spring
     for i in xrange(11):
         els.append(Spring2D11((nds2[i],nds3[i]),k))
-
+        
+    #create bracing 
     els.append(Link2D11((nds4[0],nds1[2]),E2,A1))
     els.append(Link2D11((nds4[1],nds1[6]),E2,A1))
-        
+
+    
+    #create FEA system    
     s = System()
     s.add_nodes(nds1,nds2,nds3,nds4)
     s.add_elements(els)
 
     nid1 = [nd.ID for nd in nds3]
     nid2 = [nd.ID for nd in nds4]
+
+    #add fixed supports
     s.add_fixed_sup(nid1,nid2)
     for i,el in enumerate(els[:10]):
         s.add_element_load(el.ID,"tri",-18*ka)
         s.add_element_load(el.ID,"q",-i*18*ka)
-        
+
+    #add active earth pressure
     for el in els[10:20]:
         s.add_element_load(el.ID,"q",-180*ka)
 
@@ -189,9 +200,11 @@ if __name__ == "__main__":
     for nd in nds2:
         nd.set_disp(Uy = 0)
 
+    
+    #solve the FEA system
     s.solve()
 
-
+    #show results
     disp = np.array([nd.disp["Ux"] for nd in nds1]+[nd.disp["Ux"] for nd in nds2])*1000
     Mz = [el.force["Mz"][0][0] for el in els[:20]]
 
@@ -227,4 +240,3 @@ if __name__ == "__main__":
         
 
 ```
-
