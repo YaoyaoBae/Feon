@@ -43,6 +43,6 @@ python install setup.py
 **We name the elements with "Name" + "dimensison" + 'order" + "type", type 1 means elastic.**
 
 ## Examples
-![](examples/elements-introduction/beam1/screenshot.PNG)
+![image](examples/elements-introduction/beam1/screenshot.PNG)
 
 
