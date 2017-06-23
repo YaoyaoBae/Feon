@@ -46,6 +46,7 @@ python install setup.py
 **A Truss prombelem **
 ![image](https://github.com/YaoyaoBae/Feon/blob/master/examples/problems/truss/screenshot.png)
 ```
+    python
 # -*- coding: utf-8 -*-
 # ------------------------------------
 #  Author: YAOYAO PEI
