@@ -18,7 +18,7 @@ python install setup.py
 * ffa --- For fluid flow analysis
 * derivation --- matrix derivation 
 
-## elements suported
+## Elements suported
 
 * Spring1D11 
 * Spring2D11
@@ -43,7 +43,7 @@ python install setup.py
 **We name the elements with "Name" + "dimensison" + 'order" + "type", type 1 means elastic.**
 
 ## Examples
-**A Truss prombelem **
+**A Truss prombelem**
 ![image](https://github.com/YaoyaoBae/Feon/blob/master/examples/problems/truss/screenshot.png)
 ```python
 # -*- coding: utf-8 -*-
@@ -131,4 +131,6 @@ if __name__ == "__main__":
     draw_bar_info(els[5])
 
 ```
+**Embedded wall
+![image](https://github.com/YaoyaoBae/Feon/blob/master/examples/problems/Embe/screenshot.png)
 
