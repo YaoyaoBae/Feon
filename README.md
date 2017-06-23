@@ -43,6 +43,6 @@ python install setup.py
 **We name the elements with "Name" + "dimensison" + 'order" + "type", type 1 means elastic.**
 
 ## Examples
-![image](examples/problems/truss/screenshot.PNG)
+![image](Feon-master/examples/problems/truss/screenshot.png)
 
 
