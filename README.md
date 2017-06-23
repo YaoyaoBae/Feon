@@ -13,9 +13,9 @@ Or
 ```
 python install setup.py
 ```
-##Packages
-*sa---For structrual analysis
-*ffa --- For fluid flow analysis
+## Packages
+sa---For structrual analysis**
+ffa --- For fluid flow analysis**
 
 
 
