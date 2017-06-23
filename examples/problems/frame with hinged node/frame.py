@@ -8,24 +8,28 @@
 from feon.sa import *
 from feon.tools import pair_wise
 
-
+#define beamlink element
 class BeamLink2D11(StructElement):
     def __init__(self,nodes,E,A,I):
         StructElement.__init__(self,nodes)
         self.E = E
         self.A = A
         self.I = I
+
+    #define node degree of freedom, left node has three dofs
+    #while the right node has only two
     def init_unknowns(self):
         self.nodes[0].init_unknowns("Ux","Uy","Phz")
         self.nodes[1].init_unknowns("Ux","Uy")
         self._ndof = 3
-        
+
+    #transformative matrix
     def calc_T(self):
         TBase = _calc_Tbase_for_2d_beam(self.nodes)
         self._T = np.zeros((6,6))
         self._T[:3,:3] = self._T[3:,3:] = TBase
 
-    
+    #stiffness matrix
     def calc_ke(self):
         self._ke = _calc_ke_for_2d_beamlink(E = self.E,A = self.A,I = self.I,L = self.volume)
 
@@ -59,10 +63,12 @@ def _calc_Tbase_for_2d_beam(nodes):
     return T
 
 if __name__ == "__main__":
+    #materials
     E = 210e6
     A = 0.005
     I = 10e-5
 
+    #nodes and elements
     n0 = Node(0,0)
     n1 = Node(0,3)
     n2 = Node(4,3)
@@ -76,7 +82,8 @@ if __name__ == "__main__":
     e3 = Beam2D11((n2,n4),E,A,I)
     e4 = Beam2D11((n4,n5),E,A,I)
     e5 = Beam2D11((n5,n6),E,A,I)
-
+    
+    #system
     s = System()
     s.add_nodes([n0,n1,n2,n3,n4,n5,n6])
     s.add_elements([e0,e1,e2,e3,e4,e5])
@@ -84,5 +91,8 @@ if __name__ == "__main__":
     s.add_node_force(5,Fx = -10)
     s.add_fixed_sup(0,3,6)
     s.solve()
+
+    print n2.disp
+    print e1.force
     
     
