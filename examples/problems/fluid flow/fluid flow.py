@@ -29,3 +29,6 @@ if __name__ == "__main__":
     s.add_node_head(0,0.2)
     s.add_node_head(6,0.1)
     s.solve()
+
+    print [nd.head["H"] for nd in nds]
+    print [el.velocity["Vx"] for el in els]
