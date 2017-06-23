@@ -34,6 +34,13 @@ python install setup.py
 
 * Tri2d11S---- Triange elements for plane stress problem
 * Tri2D11 ---- Triange elements for plane strain problem
+* Tetra3D11 
+* Quad2D11S 
+* Quad2D11
+* Plate3D11 ---Midline plate
+* Brick3D11
+
+** We name the elements with "Name" + "dimensison" + 'order" + "type", type 1 means elastic.
 
 
 
