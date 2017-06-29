@@ -11,7 +11,7 @@ $pip install feon
 ```
 Or
 ```
-python install setup.py
+$python install setup.py
 ```
 ## Packages
 * sa---For structrual analysis
