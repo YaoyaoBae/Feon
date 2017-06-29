@@ -18,7 +18,7 @@ python install setup.py
 * ffa --- For fluid flow analysis
 * derivation --- matrix derivation 
 
-## Elements suported
+## Elements supported
 
 * Spring1D11 
 * Spring2D11
