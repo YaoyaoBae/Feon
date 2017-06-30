@@ -11,8 +11,7 @@ $pip install feon
 ```
 Or
 ```
-$python install setup.py
-```
+$python setup.py install ```
 ## Packages
 * sa---For structrual analysis
 * ffa --- For fluid flow analysis
