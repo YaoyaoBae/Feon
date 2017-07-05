@@ -876,7 +876,7 @@ class Spring3D11(StructElement):
     def calc_T(self):
         self._T = _calc_Tbase_for_3d_link(self.nodes)
             
-    def _calc_ke(self):
+    def calc_ke(self):
         self._ke = _calc_ke_for_spring(ke = self.k)
 
 def _calc_ke_for_spring(ke = 1.0):
