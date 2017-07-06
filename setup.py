@@ -11,8 +11,8 @@ setup(name='feon',
       author='YAOYAO PEI',
       author_email='yaoyao.bae@foxmail.com',
       url = 'https://github.com/YaoyaoBae/Feon',
-      license = "HBUT",
-      packages=['feon','feon.sa'],
+      license = "Hubei Univeristy of Technology license",
+      packages=['feon','feon.sa','feon.ffa',"feon.derivation"],
       install_requires=['numpy'],
       
       )
