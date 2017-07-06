@@ -6,7 +6,7 @@
 from setuptools import setup
 
 setup(name='feon',
-      version='1.0.0',
+      version='1.0.1',
       description='FEA python-based framework',
       author='YAOYAO PEI',
       author_email='yaoyao.bae@foxmail.com',
