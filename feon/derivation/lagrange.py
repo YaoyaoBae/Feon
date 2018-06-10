@@ -62,7 +62,7 @@ def lagrange2d_rect(coords,n):
     def shape_func(x,y):
         lx = ((x-pi[i])/(pv[0]-pi[i]) for i in range(nx) if pi[i] != pv[0])
         ly = ((y-pj[i])/(pv[1]-pj[i]) for i in range(nx) if pj[i] != pv[1])
-        l = map(lambda (a,b):a*b,zip(lx,ly))
+        l = map(lambda a,b:a*b,zip(lx,ly))
         return reduce(lambda a,b:a*b,l)
     return shape_func
 

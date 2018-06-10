@@ -7,7 +7,7 @@
 
 
 import numpy as np
-from solver import *
+from .solver import *
 from ..base import SystemBase
 ##from draw2d import Drawer
 #~ *********************************************************************
@@ -78,9 +78,9 @@ class System(SystemBase):
 
     def init(self):
         self._mndof = 1
-        self._nAk = self.nodes.values()[0].nAk[:self.mndof]
-        self._nBk = self.nodes.values()[0].nBk[:self.mndof]
-        self._dim = self.nodes.values()[0].dim
+        self._nAk = self.nodes[0].nAk[:self.mndof]
+        self._nBk = self.nodes[0].nBk[:self.mndof]
+        self._dim = self.nodes[0].dim
 
     def calc_KG(self):
         self.init()
@@ -145,7 +145,7 @@ class System(SystemBase):
     def check_deleted_KG_matrix(self):
         count = 0
         shape = self.KG_keeped.shape
-        for i in xrange(shape[0]):
+        for i in range(shape[0]):
             if np.all(self.KG_keeped[i,:] == 0.):
                 count += 1
         assert count == 0,"Check your bound conditions or system make sure it can be solved"

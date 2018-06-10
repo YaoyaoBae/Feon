@@ -5,8 +5,7 @@
 #  License: Hubei University of Technology License
 # -------------------------------------
 
-from node import *
-from element import *
-from system import *
+from .node import *
+from .element import *
+from .system import *
 
-__all__ = filter(lambda s:not s.startswith('_'), dir())

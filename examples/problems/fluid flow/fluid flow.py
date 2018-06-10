@@ -15,9 +15,9 @@ if __name__ == "__main__":
 
     #create nodes and elements
     A = np.pi*(np.linspace(0.06,0.15,7)[:-1]+0.0075)
-    nds = [Node(-i*0.1,0) for i in xrange(7)]
+    nds = [Node(-i*0.1,0) for i in range(7)]
     els = []
-    for i in xrange(6):
+    for i in range(6):
         els.append(E1D((nds[i],nds[i+1]),Kxx,A[i]))
 
     #create FEA system
@@ -30,5 +30,5 @@ if __name__ == "__main__":
     s.add_node_head(6,0.1)
     s.solve()
 
-    print [nd.head["H"] for nd in nds]
-    print [el.velocity["Vx"] for el in els]
+    print ([nd.head["H"] for nd in nds])
+    print ([el.velocity["Vx"] for el in els])

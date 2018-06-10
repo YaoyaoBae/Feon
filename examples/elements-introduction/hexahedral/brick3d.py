@@ -76,17 +76,17 @@ def _calc_B_and_J_for_brick3d11(nodes,x):
     Nu = [N1u,N2u,N3u,N4u,N5u,N6u,N7u,N8u]
 
     
-    xs = sum(Ns[i]*x[i] for i in xrange(8))
-    xt = sum(Nt[i]*x[i] for i in xrange(8))
-    xu = sum(Nu[i]*x[i] for i in xrange(8))
+    xs = sum(Ns[i]*x[i] for i in range(8))
+    xt = sum(Nt[i]*x[i] for i in range(8))
+    xu = sum(Nu[i]*x[i] for i in range(8))
     
-    ys = sum(Ns[i]*y[i] for i in xrange(8))
-    yt = sum(Nt[i]*y[i] for i in xrange(8))
-    yu = sum(Nu[i]*y[i] for i in xrange(8))
+    ys = sum(Ns[i]*y[i] for i in range(8))
+    yt = sum(Nt[i]*y[i] for i in range(8))
+    yu = sum(Nu[i]*y[i] for i in range(8))
     
-    zs = sum(Ns[i]*z[i] for i in xrange(8))
-    zt = sum(Nt[i]*z[i] for i in xrange(8))
-    zu = sum(Nu[i]*z[i] for i in xrange(8))
+    zs = sum(Ns[i]*z[i] for i in range(8))
+    zt = sum(Nt[i]*z[i] for i in range(8))
+    zu = sum(Nu[i]*z[i] for i in range(8))
 
 
     MJ = np.array([[xs,ys,zs],
@@ -96,9 +96,9 @@ def _calc_B_and_J_for_brick3d11(nodes,x):
     J = np.linalg.det(MJ)
     J_v = np.linalg.inv(MJ)
 
-    Nx = [J_v[0,0]*Ns[i] + J_v[0,1]*Nt[i] + J_v[0,2]*Nu[i] for i in xrange(8)]
-    Ny = [J_v[1,0]*Ns[i] + J_v[1,1]*Nt[i] + J_v[1,2]*Nu[i] for i in xrange(8)]
-    Nz = [J_v[2,0]*Ns[i] + J_v[2,1]*Nt[i] + J_v[2,2]*Nu[i] for i in xrange(8)]
+    Nx = [J_v[0,0]*Ns[i] + J_v[0,1]*Nt[i] + J_v[0,2]*Nu[i] for i in range(8)]
+    Ny = [J_v[1,0]*Ns[i] + J_v[1,1]*Nt[i] + J_v[1,2]*Nu[i] for i in range(8)]
+    Nz = [J_v[2,0]*Ns[i] + J_v[2,1]*Nt[i] + J_v[2,2]*Nu[i] for i in range(8)]
     
     B =  np.array([[Nx[0],0,0,Nx[1],0,0,Nx[2],0,0,Nx[3],0,0,Nx[4],0,0,Nx[5],0,0,Nx[6],0,0,Nx[7],0,0],
                    [0,Ny[0],0,0,Ny[1],0,0,Ny[2],0,0,Ny[3],0,0,Ny[4],0,0,Ny[5],0,0,Ny[6],0,0,Ny[7],0],

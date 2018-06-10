@@ -4,6 +4,6 @@
 #  E-mail: yaoyao.bae@foxmail.com
 #  License: Hubei University of Technology License
 # -------------------------------------
-from dElement import *
+from .dElement import *
 
 

@@ -49,24 +49,24 @@ if __name__ == "__main__":
 ##   plt.show()
 
 ## draw Ty
-   Ty = np.abs(Ty)
-   Ty1 = Ty[:,0]
-   Ty2 = Ty[:,1]
-   Mz = np.abs(Mz)
-   Mz1 = Mz[:,0]
-   Mz2 = Mz[:,1]
-   index = np.arange(3)
-   bar_width = 0.2
-
-   res1 = plt.bar(index,Ty1,bar_width,color = "r")
-   res2 = plt.bar(index+bar_width,Ty2,bar_width,color = "g")
+##   Ty = np.abs(Ty)
+##   Ty1 = Ty[:,0]
+##   Ty2 = Ty[:,1]
+##   Mz = np.abs(Mz)
+##   Mz1 = Mz[:,0]
+##   Mz2 = Mz[:,1]
+##   index = np.arange(3)
+##   bar_width = 0.2
+##
+##   res1 = plt.bar(index,Ty1,bar_width,color = "r")
+##   res2 = plt.bar(index+bar_width,Ty2,bar_width,color = "g")
 ##   res3 = plt.bar(index,Mz1,bar_width,color = "g")
 ##   res4 = plt.bar(index+bar_width,Mz2,bar_width,color = "y")
-   ax.set_xlim([-0.5,3])
-   plt.ylabel("$Ty/kN$")
-   plt.xticks(index+bar_width,("$Beam 0$","$Beam 1$","$Beam 2$"))
-   plt.show()
-   
+##   ax.set_xlim([-0.5,3])
+##   plt.ylabel("$Ty/kN$")
+##   plt.xticks(index+bar_width,("$Beam 0$","$Beam 1$","$Beam 2$"))
+##   plt.show()
+##   
    
    
 

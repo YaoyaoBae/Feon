@@ -6,10 +6,10 @@
 # -------------------------------------
 from __future__ import division
 import numpy as np
-from lagrange import *
-from base import dElementBase
+from .lagrange import *
+from .base import dElementBase
 from ..tools import gl_quad1d
-from integration import tri_quad,Cubtri,Triex,Hammer,tetra_quad,Zctetra
+from .integration import tri_quad,Cubtri,Triex,Hammer,tetra_quad,Zctetra
 import time
 
 def pair_wise(L,end = False):
@@ -47,7 +47,7 @@ class Line(dElementBase):
             for i in range(self.nop):
                 self._n_base.append(lagrange1d(self.ncoords,i))
         else:
-            raise AttributeError,"Unknwn shape function type %r"(self.ntype,)
+            raise AttributeError("Unknwn shape function type %r"(self.ntype,))
 
     def calc_ke(self,**kwargs):
         self._ke = gl_quad1d(self.func,self.nop,(0,self.volume))
@@ -100,7 +100,7 @@ class Triangle(dElementBase):
         elif self.order == 3:
             assert self.nop == 10
         else:
-            raise AttributeError,"Only there order supported by far"
+            raise AttributeError("Only there order supported by far")
         
         self._coords = np.array([nd.coord for nd in self.nodes])
         self._volume = area_of_tri(self.coords[0],self.coords[1],self.coords[2])
@@ -142,7 +142,7 @@ class Tetrahegon(dElementBase):
         elif self.order == 2:
             assert self.nop == 10
         else:
-            raise AttributeError,"Only two order supported by far"
+            raise AttributeError("Only two order supported by far")
         
         self._coords = np.array([nd.coord for nd in self.nodes])
         self._volume = volume_of_tetra(self.coords[0],self.coords[1],self.coords[2],self.coords[3])

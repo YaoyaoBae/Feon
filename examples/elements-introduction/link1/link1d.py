@@ -41,7 +41,7 @@ if __name__ == "__main__":
     a = np.zeros((5,5))
     fig, ax = plt.subplots()
     
-    for i in xrange(5):
+    for i in range(5):
         a[i,:] = stress
     cax = ax.imshow(a,interpolation='nearest', cmap=cm.coolwarm)
     cbar = fig.colorbar(cax, orientation='horizontal')  

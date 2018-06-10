@@ -34,7 +34,7 @@ if __name__ == "__main__":
     for nd in pair_wise(nds3,True):
        els.append(Beam3D11(nd,E,G,A,I))
 
-    for i in xrange(4):
+    for i in range(4):
        els.append(Beam3D11((nds1[i],nds2[i]),E,G,A,I))
 
 
@@ -104,7 +104,7 @@ if __name__ == "__main__":
     ax2.xaxis.set_major_locator(MultipleLocator(1))
     ax2.set_ylim([-7,7])
    
-    for i in xrange(noe):
+    for i in range(noe):
        ax1.plot([i-0.5,i+0.5],[N1[i],N2[i]],"gs-")
        ax2.plot([i-0.5,i+0.5],[Ty1[i],Ty1[i]],"rs-")
        ax3.plot([i-0.5,i+0.5],[Tz1[i],Tz1[i]],"ks-")
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     ax4.xaxis.set_major_locator(MultipleLocator(1))
     ax5.xaxis.set_major_locator(MultipleLocator(1))
    
-    for i in xrange(noe):
+    for i in range(noe):
        ax4.plot([i-0.5,i+0.5],[Mx1[i],Mx2[i]],"gs-")
        ax5.plot([i-0.5,i+0.5],[My1[i],My2[i]],"rs-")
        ax6.plot([i-0.5,i+0.5],[Mz1[i],Mz2[i]],"ks-")

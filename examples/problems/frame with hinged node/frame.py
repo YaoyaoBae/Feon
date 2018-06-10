@@ -92,7 +92,7 @@ if __name__ == "__main__":
     s.add_fixed_sup(0,3,6)
     s.solve()
 
-    print n2.disp
-    print e1.force
+    print (n2.disp)
+    print (e1.force)
     
     

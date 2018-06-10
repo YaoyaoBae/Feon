@@ -87,19 +87,19 @@ def _calc_B_and_J_for_plate3d11(nodes,x):
     Ns = [N1s,N2s,N3s,N4s]
     Nt = [N1t,N2t,N3t,N4t]
     
-    xs = sum(Ns[i]*x[i] for i in xrange(4))
-    xt = sum(Nt[i]*x[i] for i in xrange(4))
+    xs = sum(Ns[i]*x[i] for i in range(4))
+    xt = sum(Nt[i]*x[i] for i in range(4))
    
-    ys = sum(Ns[i]*y[i] for i in xrange(4))
-    yt = sum(Nt[i]*y[i] for i in xrange(4))
+    ys = sum(Ns[i]*y[i] for i in range(4))
+    yt = sum(Nt[i]*y[i] for i in range(4))
     
     J = np.array([[xs,ys],
                   [xt,yt]])
     
     J_v = np.linalg.inv(J)
 
-    Nx = [J_v[0,0]*Ns[i] + J_v[0,1]*Nt[i] for i in xrange(4)]
-    Ny = [J_v[1,0]*Ns[i] + J_v[1,1]*Nt[i] for i in xrange(4)]
+    Nx = [J_v[0,0]*Ns[i] + J_v[0,1]*Nt[i] for i in range(4)]
+    Ny = [J_v[1,0]*Ns[i] + J_v[1,1]*Nt[i] for i in range(4)]
     
     Bf = np.array([[0,Nx[0],0,0,Nx[1],0,0,Nx[2],0,0,Nx[3],0],
                    [0,0,Ny[0],0,0,Ny[1],0,0,Ny[2],0,0,Ny[3]],

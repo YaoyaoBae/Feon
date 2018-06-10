@@ -60,7 +60,7 @@ class NodeBase(object):
                 self._z = coord[0][2]*1.
                 self.coord = (self.x,self.y,self.z)
             else:
-                raise AttributeError,"Node dimension is 2 or 3"
+                raise AttributeError("Node dimension is 2 or 3")
             
         elif len(coord) == 2:
             self.coord = tuple(coord)
@@ -76,7 +76,7 @@ class NodeBase(object):
             self._z = coord[2]*1.
             self.coord = (self.x,self.y,self.z)
         else:
-            raise AttributeError,"Node dimension is 2 or 3"
+            raise AttributeError("Node dimension is 2 or 3")
 
 
     @property

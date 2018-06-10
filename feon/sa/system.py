@@ -7,9 +7,9 @@
 
 
 import numpy as np
-from solver import *
+from .solver import *
 from ..base import SystemBase
-from post_process import PostProcess
+from .post_process import PostProcess
 ##from draw2d import Drawer
 #~ *********************************************************************
 #~ ****************************  CLASS SYSTEM **************************
@@ -87,9 +87,9 @@ class System(SystemBase):
 
     def init(self):
         self._mndof = max(el.ndof for el in self.get_elements())
-        self._nAk = self.nodes.values()[0].nAk[:self.mndof]
-        self._nBk = self.nodes.values()[0].nBk[:self.mndof]
-        self._dim = self.nodes.values()[0].dim
+        self._nAk = self.nodes[0].nAk[:self.mndof]
+        self._nBk = self.nodes[0].nBk[:self.mndof]
+        self._dim = self.nodes[0].dim
 
     def calc_KG(self):
         self.init()

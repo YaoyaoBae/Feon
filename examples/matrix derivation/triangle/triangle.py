@@ -43,6 +43,6 @@ if __name__ == "__main__":
     e1 = Tri2D11S(nds,E,nu,t)
     e1.calc_Ke()
     
-    print "stiffness matrix of e is:\n%r)"%(e.ke,)
-    print "stiffness matrix of e1 is:\n%r)"%(e1.Ke,)
+    print ("stiffness matrix of e is:\n%r)"%(e.ke,))
+    print ("stiffness matrix of e1 is:\n%r)"%(e1.Ke,))
     

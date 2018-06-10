@@ -493,7 +493,7 @@ def _calc_element_load_for_2d_beam(el,ltype = "q",val = 1.):
         A[2][0] = 1/30.*val*le**2
         A[5][0] = -1/20.*val*le**2
     else:
-        raise AttributeError,"Unkown load type(%r)"%(ltype,)
+        raise AttributeError("Unkown load type(%r)"%(ltype,))
 
     return A
 
@@ -686,7 +686,7 @@ def _calc_element_load_for_3d_beam(el,ltype = "q",val = (1,1)):
 
 
     else:
-        raise AttributeError,"Unkown load type(%r)"%(ltype,)
+        raise AttributeError("Unkown load type(%r)"%(ltype,))
 
     return A
 
@@ -965,7 +965,7 @@ def _calcElementLoadFor2DLinkBeam(el,ltype = "q",val = 1.):
             
 
     else:
-        raise AttributeError,"Unkown load type(%r)"%(ltype,)
+        raise AttributeError("Unkown load type(%r)"%(ltype,))
 
     return A
 
@@ -990,7 +990,7 @@ def _calcElementLoadFor2DBeamLink(el,ltype = "q",val = 1.):
             
 
     else:
-        raise AttributeError,"Unkown load type(%r)"%(ltype,)
+        raise AttributeError("Unkown load type(%r)"%(ltype,))
 
     return A
 
@@ -1156,7 +1156,7 @@ def _calcElementLoadFor3DLinkBeam(el,ltype = "q",val = (1.,1.)):
 
 
     else:
-        raise AttributeError,"Unkown load type(%r)"%(ltype,)
+        raise AttributeError("Unkown load type(%r)"%(ltype,))
 
     return A
 
@@ -1196,7 +1196,7 @@ def _calcElementLoadFor3DBeamLink(el,ltype = "q",val = (1.,1.)):
         A[4][0] = 1/60.*val[1]*le**2              
 
     else:
-        raise AttributeError,"Unkown load type(%r)"%(ltype,)
+        raise AttributeError("Unkown load type(%r)"%(ltype,))
 
     return A
 

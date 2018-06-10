@@ -44,14 +44,14 @@ class Node(NodeBase):
             if key in self.nAk:
                 self._disp[key] = None
             else:
-                raise AttributeError,"Unknow disp name(%r)"%(unknowns,)
+                raise AttributeError("Unknow disp name(%r)"%(unknowns,))
     
     def set_force(self,**forces):
         for key in forces.keys():
             if key in self.nBk:
                 self._force[key] += forces[key]
             else:
-                raise AttributeError,"Unknow focre name(%r)"%(forces,)
+                raise AttributeError("Unknow focre name(%r)"%(forces,))
     
     def clear_force(self):
         for key in self.nBk:
@@ -65,7 +65,7 @@ class Node(NodeBase):
             if key in self.nAk:
                 self._disp[key] = disp[key]
             else:
-                raise AttributeError,"Unknow disp name(%r)"%(disp,)
+                raise AttributeError("Unknow disp name(%r)"%(disp,))
             
     def clear_disp(self):
         for key in self.nAk:

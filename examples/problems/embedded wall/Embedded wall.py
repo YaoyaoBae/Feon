@@ -18,16 +18,16 @@ if __name__ == "__main__":
     A1 = 0.003
     ka = 0.6
 
-    nds1 =[Node(0,-i) for i in xrange(10)]
-    nds2 = [Node(0,-(i+20)*0.5) for i in xrange(11)]
-    nds3 = [Node(-0.5,-(i+20)*0.5) for i in xrange(11)]
+    nds1 =[Node(0,-i) for i in range(10)]
+    nds2 = [Node(0,-(i+20)*0.5) for i in range(11)]
+    nds3 = [Node(-0.5,-(i+20)*0.5) for i in range(11)]
     nds4 = [Node(-1.5,-2),Node(-1.5,-6)]
 
     els=[]
     for nd in pair_wise(nds1+nds2):
         els.append(Beam2D11(nd,E1,A,I))
 
-    for i in xrange(11):
+    for i in range(11):
         els.append(Spring2D11((nds2[i],nds3[i]),k))
 
     els.append(Link2D11((nds4[0],nds1[2]),E2,A1))
@@ -64,8 +64,8 @@ if __name__ == "__main__":
     ax2 = fig2.add_subplot(111)
     ax3 = fig3.add_subplot(111)
     
-    Y1 = [-i for i in xrange(10)]+[-(i+20)*0.5 for i in xrange(11)]
-    Y2 = [-i-0.5 for i in xrange(10)]+[-(i+20)*0.5-0.5 for i in xrange(10)]
+    Y1 = [-i for i in range(10)]+[-(i+20)*0.5 for i in range(11)]
+    Y2 = [-i-0.5 for i in range(10)]+[-(i+20)*0.5-0.5 for i in range(10)]
     ax1.plot(disp,Y1,"r--")
     ax1.set_xlabel("$Ux/mm$")
     ax1.set_ylabel("$Height/m$")

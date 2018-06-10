@@ -6,7 +6,7 @@
 # -------------------------------------
 
 import numpy as np
-from tools import pair_wise
+from .tools import pair_wise
 class Mesh(object):
 
     def __init__(self):
@@ -42,7 +42,7 @@ class Mesh(object):
             self.points, self.elements = create_cube(self.x_lim, self.y_lim,
                                                      self.z_lim,params['size'])
         else:
-            raise AttributeError,"unknown mesh type"
+            raise AttributeError("unknown mesh type")
         self.p_num = self.points.shape[0]
         self.e_num = self.elements.shape[0]
 

@@ -68,9 +68,9 @@ if __name__ == "__main__":
     #create nodes and elements
     nds1 = []
     nds2 = []
-    for i in xrange(13):
+    for i in range(13):
         nds1.append(Node(i,0))
-    for i in xrange(11):
+    for i in range(11):
         nds2.append(Node(i+1,-1))
     els = []
     for e in pair_wise(nds1):
@@ -78,12 +78,12 @@ if __name__ == "__main__":
     for e in pair_wise(nds2):
         els.append(Link2D11((e[0],e[1]),E,A1))
 
-    for i in xrange(6):
+    for i in range(6):
         els.append(Link2D11((nds1[i],nds2[i]),E,A2))
     for i in xrange(6):
         els.append(Link2D11((nds2[i+5],nds1[i+7]),E,A2))
 
-    for i in xrange(11):
+    for i in range(11):
         els.append(Link2D11((nds1[i+1],nds2[i]),E,A2))
 
     #create FEA system
@@ -97,7 +97,7 @@ if __name__ == "__main__":
     #apply boundry condition
     s.add_node_force(nds1[0].ID,Fy = -1000)
     s.add_node_force(nds1[-1].ID,Fy = -1000)
-    for i in xrange(1,12):
+    for i in range(1,12):
         s.add_node_force(nds1[i].ID,Fy = -1900)
     s.add_fixed_sup(nds1[0].ID)
     s.add_rolled_sup(nds1[-1].ID,"y")
@@ -125,7 +125,7 @@ if __name__ == "__main__":
     ax2.set_ylabel(r"$N/kN$")
     ax2.set_ylim(-40000,40000)
     ax2.xaxis.set_minor_locator(MultipleLocator(1))
-    for i in xrange(len(eforce)):
+    for i in range(len(eforce)):
         ax2.plot([i-0.5,i+0.5],[eforce[i],eforce[i]],"ks-",ms = 3)
     plt.show()
     draw_bar_info(els[5])
@@ -261,9 +261,9 @@ if __name__ == "__main__":
     ka = 0.6 #active earth pressure coefficient 
 
     #create nodes
-    nds1 =[Node(0,-i) for i in xrange(10)]
-    nds2 = [Node(0,-(i+20)*0.5) for i in xrange(11)]
-    nds3 = [Node(-0.5,-(i+20)*0.5) for i in xrange(11)]
+    nds1 =[Node(0,-i) for i in range(10)]
+    nds2 = [Node(0,-(i+20)*0.5) for i in range(11)]
+    nds3 = [Node(-0.5,-(i+20)*0.5) for i in range(11)]
     nds4 = [Node(-1.5,-2),Node(-1.5,-6)]
 
     #create beam
@@ -273,7 +273,7 @@ if __name__ == "__main__":
 
     
     #create soil spring
-    for i in xrange(11):
+    for i in range(11):
         els.append(Spring2D11((nds2[i],nds3[i]),k))
         
     #create bracing 
@@ -318,8 +318,8 @@ if __name__ == "__main__":
     ax2 = fig2.add_subplot(111)
     ax3 = fig3.add_subplot(111)
     
-    Y1 = [-i for i in xrange(10)]+[-(i+20)*0.5 for i in xrange(11)]
-    Y2 = [-i-0.5 for i in xrange(10)]+[-(i+20)*0.5-0.5 for i in xrange(10)]
+    Y1 = [-i for i in range(10)]+[-(i+20)*0.5 for i in range(11)]
+    Y2 = [-i-0.5 for i in range(10)]+[-(i+20)*0.5-0.5 for i in range(10)]
     ax1.plot(disp,Y1,"r--")
     ax1.set_xlabel("$Ux/mm$")
     ax1.set_ylabel("$Height/m$")
@@ -364,9 +364,9 @@ if __name__ == "__main__":
 
     #create nodes and elements
     A = np.pi*(np.linspace(0.06,0.15,7)[:-1]+0.0075)
-    nds = [Node(-i*0.1,0) for i in xrange(7)]
+    nds = [Node(-i*0.1,0) for i in range(7)]
     els = []
-    for i in xrange(6):
+    for i in range(6):
         els.append(E1D((nds[i],nds[i+1]),Kxx,A[i]))
 
     #create FEA system
