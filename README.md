@@ -43,7 +43,7 @@ $python setup.py install
 **We name the elements with "Name" + "dimension" + 'order" + "type", type 1 means elastic .**
 
 ## Examples
-**A Truss prombelem**
+**A Truss promblem**
 ![image](https://github.com/YaoyaoBae/Feon/blob/master/examples/problems/truss/screenshot.png)
 ```python
 # -*- coding: utf-8 -*-
